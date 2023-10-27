@@ -10,6 +10,24 @@ class AlunoController {
             res.status(500).json({message:`${error.message}  "Erro ao listar alunos"`})
         }
     };
+    static async listarAlunoPorId (req, res) {
+        try {
+            const id = req.params.id;
+            
+            const alunoEncontrado = await aluno.findById(id)
+
+            if(!alunoEncontrado){
+                return res.status(404).json({message:'Aluno não encotrado'})
+            }
+
+            res.status(200).json(alunoEncontrado);
+            
+        } catch (error) {
+            res.status(500).json({message:`${error.message}  "Erro ao listar alunos"`})
+        }
+    };
+
+
 
     static async cadastrarAluno(req, res){
         try {

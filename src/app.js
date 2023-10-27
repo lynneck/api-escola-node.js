@@ -2,18 +2,14 @@ import express from "express";
 import conectNaDatabase from "./config/dbConnect.js";
 import routes from "./routes/index.js";
 
-//const connect = await conectNaDatabase();
 conectNaDatabase();
-//conectNaDatabase.on("error", console.log(console,"Erro de conexão"));
-//conectNaDatabase.once("open",() => {
-  //  console.log("conexão feita com sucesso")
-//})
 
 const app = express();
 app.use(express.json())
 routes(app)
 
 
+export default app;
 /*
 
 app.get("/", (req, res) => {
@@ -38,5 +34,3 @@ app.delete("/alunos/:id", (req, res) => {
 
 */
 
-
-export default app;
