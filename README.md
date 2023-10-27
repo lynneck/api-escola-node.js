@@ -1,3 +1,3 @@
 # api-escola-node.js
 criando uma api para uma escola
-API foi desenvolvida crud, é possivel listrar, criar, atualizar e deletar alunos  
+API foi desenvolvida crud, é possivel listar, criar, atualizar e deletar alunos  
