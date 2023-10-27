@@ -7,6 +7,7 @@ routes.get("/alunos", AlunoController.listarAlunos)
 routes.get("/alunos/:id", AlunoController.listarAlunoPorId)
 routes.post("/alunos", AlunoController.cadastrarAluno)
 routes.put("/alunos/:id", AlunoController.atualizaAlunos)
+routes.delete("/alunos/:id", AlunoController.deletarAlunoPorId)
 
 
 export default routes;

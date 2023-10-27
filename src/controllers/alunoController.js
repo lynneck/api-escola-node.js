@@ -53,7 +53,23 @@ class AlunoController {
             res.status(200).json({message:'Aluno atualizado com sucesso', aluno: alunoAtualizado});
             
         } catch (error) {
-            res.status(500).json({message:`${error.message}  "Erro ao listar alunos"`})
+            res.status(500).json({message:`${error.message}  "Erro ao atualizar aluno"`})
+        }
+    };
+    static async deletarAlunoPorId (req, res) {
+        try {
+            const id = req.params.id;
+            
+            const alunoDeletado = await aluno.findByIdAndDelete(id)
+
+            if(!alunoDeletado){
+                return res.status(404).json({message:'Aluno não encotrado'})
+            }
+
+            res.status(200).json({message:'Aluno deletado com sucesso'});
+            
+        } catch (error) {
+            res.status(500).json({message:`${error.message}  "Falha ao excluir o livro"`})
         }
     };
 
